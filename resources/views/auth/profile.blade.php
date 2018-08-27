@@ -10,10 +10,10 @@
         {{ session('status') }}
     </div>
     @endif
-    <img src="/upload/avatar/{{ $user->avatar }}" 
-    style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
+    <img src="upload/avatar/{{ $user->avatar }}" 
+    style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px; display: inline-block;">
     <h2>{{ $user->name }}</h2>
-    <form action="/profile" method="POST" enctype="multipart/form-data">
+    <form action="profile" method="POST" enctype="multipart/form-data">
         <label for="">Atualizar imagem</label>
         <input type="file" name="avatar">
         @csrf

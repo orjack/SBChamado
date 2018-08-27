@@ -1,5 +1,11 @@
 
 
+<!-- Biblioteca padrão do Jquery na pasta js/ -->
+<link rel="stylesheet" href="{{ asset('js/jquery/jquery-ui.theme.min.css') }}">
+<link rel="stylesheet" href="{{ asset('js/jquery/jquery-ui.min.css') }}">
+<script src="{{ asset('js/jquery/jquery.js') }}" defer></script>
+<script src="{{ asset('js/jquery/jquery-ui.js') }}" defer></script>
+
 <div class="form-group col-10">
     <label>Chamado</label>
     <input class="form-control" type="text" name="id" value="{{ isset($ticket->id) ? $ticket->id : '' }}">
@@ -22,13 +28,6 @@
     @endforeach
   </select>
 </div>
-
-<!-- Biblioteca padrão do Jquery na pasta js/ -->
-<link rel="stylesheet" href="{{ asset('js/jquery/jquery-ui.theme.min.css') }}">
-<link rel="stylesheet" href="{{ asset('js/jquery/jquery-ui.min.css') }}">
-<script src="{{ asset('js/jquery/jquery.js') }}" defer></script>
-<script src="{{ asset('js/jquery/jquery-ui.js') }}" defer></script>
-
 
 <div class="form-group col-10">
     <div class="panel-body">
@@ -54,15 +53,17 @@
       <label class="form-check-label" for="inlineRadio1">Concluido</label>
     </div>
 
+
+
 <script type="text/javascript">
-    $(document).ready(function(e) {
-        $("#date").datepicker({
-            dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
-            dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
-            dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
-            monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
-            monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
-            dateFormat: 'dd/mm/yy',
-        });
+$(document).ready(function(e) {
+    $("#date").datepicker({
+        dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+        dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+        dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+        monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+        monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+        dateFormat: 'dd/mm/yy',
     });
-    </script>
+});
+</script>

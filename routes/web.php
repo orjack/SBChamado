@@ -13,7 +13,7 @@
 
 Auth::routes();
 Route::get('/profile', ['as'=>'profile', 'uses'=> 'UserController@profile']);
-Route::post('/profile', 'UserController@update_avatar')->name('avatar');
+Route::post('/profile',  ['as'=>'profile', 'uses'=> 'UserController@update_avatar']);
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>'auth'], function(){
