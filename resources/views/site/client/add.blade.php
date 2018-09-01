@@ -9,6 +9,7 @@
 method="POST" enctype="multipart/form-data">
   {{ csrf_field() }}
   @include('site.client._form')
-  <button  class="btn btn-primary" type="submit">Salvar</button>
+
+  <button class="btn btn-primary" type="submit">Salvar</button>
 </form>
 @endsection

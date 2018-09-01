@@ -7,17 +7,23 @@ use Illuminate\Http\Request;
 use App\Models\Ticket;
 use App\Models\Cliente;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AnalystController extends Controller
 {
+    private $ticket;
+    
+    public function __construct(Ticket $ticket)
+    {
+        $this->ticket = $ticket;
+    }
+    
     public function index() {
-
         $analyst = Ticket::orderBy('date', 'desc')->get();
-        $count = $analyst->where('id_user', 2)->count();
-        
+        $count = $analyst->where('id_user', Auth::id())->count();
         $empresa = Cliente::orderBy('id', 'asc')->get();
         
-        return view('site.analyst.index', compact('analyst', 'empresa', 'count'));
+        return view('site.analyst.index', compact('analyst','empresa', 'count'));
       }
   
     public function add() {
@@ -28,19 +34,13 @@ class AnalystController extends Controller
     }
 
     public function save(Request $request) {
-        $ticket = new Ticket();
-        if($request['id'] == $ticket->id ) {
-            return "Codigo ja existe";
-        }
-        else {
-            $ticket->id = $request['id'];
-            $ticket->id_client = $request['id_client'];
-            $ticket->id_user = $request['id_user'];
-            $ticket->date = $request['date'];
-            $ticket->situation = $request['situation'];
-            $ticket->save();
-            return redirect()->route('analyst');
-        }  
+        $this->validate($request, $this->ticket->rules, $this->ticket->messages);
+    
+        $ticket = $request->all();
+        Ticket::create($ticket);
+    
+        return redirect()->route('analyst');
+        
     }
 
     public function edit($id) {

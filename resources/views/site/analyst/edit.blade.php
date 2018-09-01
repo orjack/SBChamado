@@ -9,7 +9,7 @@
 method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
     <input type="hidden" name="_method" value="put">
-    @include('site.analyst._form')
+    @include('site._form')
     <a class="float-right btn btn-danger" href="{{ route('analyst') }}" style="margin-left:5px;">Voltar</a>
     <button class="float-right btn btn-primary">Atualizar</button>
 </form
