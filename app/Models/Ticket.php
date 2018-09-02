@@ -11,7 +11,7 @@ class Ticket extends Model
     
     public $rules =
         [
-            'id' => 'required|integer|unique:clientes|max:10',
+            'id' => 'required|integer|unique:clientes|max:100000',
             'id_user' => 'required|unique:clientes',
             'id_client' => 'required|unique:clientes',
             'date' => 'required',
