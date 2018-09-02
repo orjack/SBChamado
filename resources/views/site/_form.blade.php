@@ -33,7 +33,7 @@
     <div class="panel-body">
         <div class="md-form">
             <label>Data</label>
-            <input id="date" class="form-control" type="text" name="date"
+            <input id="date" class="form-control" type="date" name="date"
                    value="{{isset($ticket->date) ? $ticket->date : date('d/m/Y')}}">
         </div>
         <p style="color:red">{{ $errors->first('date') }}</p>
@@ -70,15 +70,3 @@
     <p style="color:red">{{ $errors->first('situation') }}</p>
 </div>
 
-<script type="text/javascript">
-    $(document).ready(function (e) {
-        $("#date").datepicker({
-            dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
-            dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
-            dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
-            monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-            monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-            dateFormat: 'dd/mm/yy',
-        });
-    });
-</script>

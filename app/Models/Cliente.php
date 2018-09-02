@@ -4,13 +4,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cliente extends Model
 {
+    protected $table = 'clientes';    
     protected $primaryKey = 'id';
     public $fillable = ['id', 'name'];
     public $timestamps = false;
 
     public $rules =
         [
-            'id' => 'required|integer|unique:clientes|max:10',
+            'id' => 'required|integer|unique:clientes',
             'name' => 'required|unique:clientes|max:255',
         ];
     

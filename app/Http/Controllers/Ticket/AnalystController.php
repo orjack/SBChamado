@@ -34,10 +34,13 @@ class AnalystController extends Controller
     }
 
     public function save(Request $request) {
-        $this->validate($request, $this->ticket->rules, $this->ticket->messages);
-    
-        $ticket = $request->all();
-        Ticket::create($ticket);
+	$ticket = new Ticket();
+	$ticket->id = $request['id'];
+	$ticket->id_user = $request['id_user'];
+	$ticket->id_client = $request['id_client'];
+	$ticket->date = $request['date'];
+	$ticket->situation = $request['situation'];
+	$ticket->save();        
     
         return redirect()->route('analyst');
         

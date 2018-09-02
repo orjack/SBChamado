@@ -37,8 +37,7 @@
         
         public function save(Request $request)
         {
-            $this->validate($request, $this->ticket->rules, $this->ticket->messages);
-            
+	    $this->validate($request, $this->ticket->rules, $this->ticket->messages);
             $ticket = $request->all();
             Ticket::create($ticket);
             

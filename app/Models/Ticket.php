@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Ticket extends Model
-{
-    protected $primaryKey = 'id';
+{    
+    public $table = 'tickets';
     protected $fillable = ['id', 'id_user', 'id_client', 'date', 'situation'];
     public $timestamps = false;
     
     public $rules =
         [
-            'id' => 'required|integer|unique:clientes|max:100000',
-            'id_user' => 'required|unique:clientes',
-            'id_client' => 'required|unique:clientes',
-            'date' => 'required',
+            'id' => 'required|integer|unique:tickets',
+            'id_user' => 'required|unique:tickets',
+            'id_client' => 'required|unique:tickets',
+           
             'situation' => 'required',
         ];
     
@@ -25,7 +25,7 @@ class Ticket extends Model
             'id.unique' => 'Este campo id é único',
             'id_user.required'  => 'Este campo nome é requerido',
             'id_user.unique'  => 'Este campo name é único',
-            'date.required'  => 'Este campo data é requerido',
+            
             'situation.required'  => 'Este campo situação é requirido',
         ];
 }
