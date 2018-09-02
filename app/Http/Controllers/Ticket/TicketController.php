@@ -7,6 +7,7 @@
     use App\Models\Ticket;
     use App\Models\Cliente;
     use App\Models\User;
+    use Carbon\Carbon;
     
     class TicketController extends Controller
     {
@@ -29,9 +30,11 @@
         public function add()
         {
             $ticket = Ticket::all();
+            $now = new Carbon();
+            //dd($now->formatLocalized('%d/%m/%Y'));
             $empresa = Cliente::orderBy('id', 'asc')->get();
             $user = User::all();
-            return view('site.ticket.add', compact('ticket', 'empresa', 'user'));
+            return view('site.ticket.add', compact('ticket', 'empresa', 'user', 'now'));
         }
         
         

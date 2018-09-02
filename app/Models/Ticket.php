@@ -13,9 +13,7 @@ class Ticket extends Model
     public $rules =
         [
             'id' => 'required|integer|unique:tickets',
-            'id_user' => 'required|unique:tickets',
-            'id_client' => 'required|unique:tickets',
-           
+            'date' => 'required',
             'situation' => 'required',
         ];
     
@@ -23,9 +21,7 @@ class Ticket extends Model
         [
             'id.required' => 'Este campo Chamado é requerido',
             'id.unique' => 'Este campo id é único',
-            'id_user.required'  => 'Este campo nome é requerido',
-            'id_user.unique'  => 'Este campo name é único',
-            
+            'date.required'  => 'Este campo data é requerido',
             'situation.required'  => 'Este campo situação é requirido',
         ];
 }

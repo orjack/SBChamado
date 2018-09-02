@@ -8,6 +8,7 @@
     use App\Models\Cliente;
     use App\Models\User;
     use Illuminate\Support\Facades\Auth;
+    use Carbon\Carbon;
     
     class AnalystController extends Controller
     {
@@ -21,10 +22,20 @@
         public function index()
         {
             $analyst = Ticket::orderBy('date', 'desc')->get();
-            $count = $analyst->where('id_user', Auth::id())->count();
             $empresa = Cliente::orderBy('id', 'asc')->get();
             
-            return view('site.analyst.index', compact('analyst', 'empresa', 'count'));
+            $inicio = new Carbon('now sunday');
+            $fim = new Carbon('now friday');
+    
+            $data = Ticket::select('date')->get();
+        
+            $count = $analyst->where('id_user', Auth::id())
+                ->where('date', '>' ,$inicio)
+                ->where('date', '<' ,$fim)
+                ->count();
+            
+            
+            return view('site.analyst.index', compact('analyst', 'empresa', 'count', 'inicio', 'fim', 'data'));
         }
         
         public function add()

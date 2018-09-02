@@ -22,29 +22,17 @@
     </select>
 </div>
 
-<!-- Biblioteca padrão do Jquery na pasta js/ -->
-<script src="{{ asset('js/bootstrap-datetimepicker.js') }}" defer></script>
-<script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}" defer></script>
-<!-- Biblioteca padrão do Jquery na pasta js/ -->
 
 <div class="form-group col-10">
     <div class="panel-body">
         <div class="md-form">
             <label>Data</label>
             <input class="form-control" type="date" name="date"
-                   value="{{isset($ticket->date) ? $ticket->date : ''}}">
+                   value="{{isset($ticket->date) ? $ticket->date : '' }}">
         </div>
         <p style="color:red">{{ $errors->first('date') }}</p>
     </div>
 </div>
-
-<script>
-    function myFunction(val){
-        document.getElementById('id').type = val;
-    }
-</script>
-
-
 
 <div class="form-group col-10">
     <div class="form-check form-check-inline">
