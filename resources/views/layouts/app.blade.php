@@ -58,7 +58,7 @@
                             @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="position: relative; padding-left:50px;">
-                                        <img src="/upload/avatar/{{ Auth::user()->avatar }}" style="width: 40px; height: 40px; position: absolute; 
+                                        <img src="upload/avatar/{{ Auth::user()->avatar }}" style="width: 40px; height: 40px; position: absolute; 
                                             top:1px; left: 5px; border-radius: 50%;">
                                             {{ Auth::user()->name }}
                                             <span class="caret"></span>

@@ -15,14 +15,13 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->integer('id')->unique();
-            $table->unsignedInteger('id_client');
             $table->unsignedInteger('id_user');
+	    $table->unsignedInteger('id_client');
+            $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('id_client')->references('id')->on('clientes');
             $table->date('date');
             $table->integer('situation')->default(0);
             $table->timestamps();
-
-            $table->foreign('id_client')->references('id')->on('clients');
-            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 

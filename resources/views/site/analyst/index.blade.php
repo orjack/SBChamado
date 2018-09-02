@@ -24,7 +24,7 @@
                         <td>{{$t->id}}</td>
                         <td>{{$t->id_client}}</td>
                         <td>{{$e->name}}</td>
-                        <td><img src="/upload/avatar/{{ Auth::user()->avatar }}" style="width: 40px; height: 40px;
+                        <td><img src="upload/avatar/{{ Auth::user()->avatar }}" style="width: 40px; height: 40px;
                 border-radius: 50%;"></td>
                         <td>{{$t->date}}</td>
                         <td>
