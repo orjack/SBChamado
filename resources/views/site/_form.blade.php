@@ -31,8 +31,8 @@
     <div class="panel-body">
         <div class="md-form">
             <label>Data</label>
-            <input id="date" class="form-control" type="text" onclick="this.type=date"  name="date"
-                   value="{{isset($ticket->date) ? $ticket->date : date('d/m/Y')}}">
+            <input class="form-control" type="date" name="date"
+                   value="{{isset($ticket->date) ? $ticket->date : ''}}">
         </div>
         <p style="color:red">{{ $errors->first('date') }}</p>
     </div>
