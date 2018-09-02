@@ -13,7 +13,7 @@
     </select>
 </div>
 
-<div class="form-group col-10">
+<div class="form-group col-10 input-append date form_datetime">
     <label>Analista</label>
     <select class="custom-select custom-select-lg mb-3" id="user" name="id_user">
         @foreach($user as $u)
@@ -23,22 +23,28 @@
 </div>
 
 <!-- Biblioteca padrão do Jquery na pasta js/ -->
-<link rel="stylesheet" href="{{ asset('js/jquery/jquery-ui.theme.min.css') }}">
-<link rel="stylesheet" href="{{ asset('js/jquery/jquery-ui.min.css') }}">
-<script src="{{ asset('js/jquery/jquery.js') }}" defer></script>
-<script src="{{ asset('js/jquery/jquery-ui.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap-datetimepicker.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}" defer></script>
 <!-- Biblioteca padrão do Jquery na pasta js/ -->
 
 <div class="form-group col-10">
     <div class="panel-body">
         <div class="md-form">
             <label>Data</label>
-            <input id="date" class="form-control" type="date" name="date"
+            <input id="date" class="form-control" type="text" onclick="this.type=date"  name="date"
                    value="{{isset($ticket->date) ? $ticket->date : date('d/m/Y')}}">
         </div>
         <p style="color:red">{{ $errors->first('date') }}</p>
     </div>
 </div>
+
+<script>
+    function myFunction(val){
+        document.getElementById('id').type = val;
+    }
+</script>
+
+
 
 <div class="form-group col-10">
     <div class="form-check form-check-inline">
