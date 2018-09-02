@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ticket extends Model
 {
+    protected $primaryKey = 'id';
     protected $fillable = ['id', 'id_user', 'id_client', 'date', 'situation'];
     public $timestamps = false;
     

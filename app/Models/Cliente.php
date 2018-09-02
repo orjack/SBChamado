@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cliente extends Model
 {
-    protected $primaryKey = 'clientes';
+    protected $primaryKey = 'id';
     public $fillable = ['id', 'name'];
     public $timestamps = false;
 
