@@ -29,7 +29,7 @@
             <nav class="navbar navbar navbar-dark bg-secondary navbar-expand-md">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'SB Ticket') }}
+                        Chamados
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -60,7 +60,7 @@
                             @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="position: relative; padding-left:50px;">
-                                        <img src="upload/avatar/{{ Auth::user()->avatar }}" style="width: 40px; height: 40px; position: absolute;
+                                        <img src="/upload/avatar/{{ Auth::user()->avatar }}" style="width: 40px; height: 40px; position: absolute;
                                             top:1px; left: 5px; border-radius: 50%;">
                                             {{ Auth::user()->name }}
                                             <span class="caret"></span>
@@ -70,7 +70,7 @@
                                         <a class="dropdown-item" href="{{ route('profile') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('profile-form').submit();">
-                                            <i class="fas fa-user"></i> {{ __('Profile') }}
+                                            <i class="fas fa-user"></i> {{ __('Perfil') }}
                                         </a>
 
                                         <form id="profile-form" action="{{ route('profile') }}" method="POST" style="display: none;">
@@ -80,7 +80,7 @@
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                            <i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}
+                                            <i class="fas fa-sign-out-alt"></i> {{ __('Sair') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

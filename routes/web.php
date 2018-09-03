@@ -15,6 +15,8 @@ Auth::routes();
 Route::get('/profile', ['as'=>'profile', 'uses'=> 'UserController@profile']);
 Route::post('/profile',  ['as'=>'profile', 'uses'=> 'UserController@update_avatar']);
 Route::get('/', 'HomeController@index')->name('home');
+    
+Route::get('/analista/modal', ['as'=>'modal', 'uses' =>'HomeController@modal']);
 
 Route::group(['middleware'=>'auth'], function(){
     Route::get('/chamado', ['as'=>'ticket', 'uses'=> 'Ticket\TicketController@index']);

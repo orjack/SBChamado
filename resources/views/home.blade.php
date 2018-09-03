@@ -11,5 +11,5 @@
     </div>
     @endif
 
-    You are logged in!
+
 @endsection

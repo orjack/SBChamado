@@ -63,4 +63,3 @@
     </div>
     <p style="color:red">{{ $errors->first('situation') }}</p>
 </div>
-
