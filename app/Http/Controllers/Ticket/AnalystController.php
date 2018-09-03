@@ -24,9 +24,8 @@
             $analyst = Ticket::orderBy('date', 'desc')->get();
             $empresa = Cliente::orderBy('id', 'asc')->get();
             
-            $inicio = new Carbon('now sunday');
+            $inicio = new Carbon('now monday ');
             $fim = new Carbon('now friday');
-    
             $data = Ticket::select('date')->get();
         
             $count = $analyst->where('id_user', Auth::id())
