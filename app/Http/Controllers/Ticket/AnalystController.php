@@ -24,7 +24,7 @@
             $analyst = Ticket::orderBy('date', 'desc')->get();
             $empresa = Cliente::orderBy('id', 'asc')->get();
             
-            $inicio = new Carbon('now monday ');
+            $inicio = new Carbon('last sunday');
             $fim = new Carbon('now friday');
             $data = Ticket::select('date')->get();
         
