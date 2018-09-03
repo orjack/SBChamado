@@ -18,7 +18,7 @@ class ClientController extends Controller
     
     public function index()
     {
-        $empresa = Cliente::all();
+        $empresa = Cliente::orderBy('id', 'asc')->get();
         return view('site.client.index', compact('empresa'));
     }
     
