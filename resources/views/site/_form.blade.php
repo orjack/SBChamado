@@ -8,7 +8,7 @@
     <label>Cliente</label>
     <select id="item_empresa" name="id_client" class="custom-select custom-select-lg mb-3">
         @foreach($empresa as $client)
-            <option id="#tableitem" name="item_empresa" value="{{ $client->id }}" ->{{ $client->name }}</option>
+            <option id="#tableitem" name="item_empresa" value="{{ $client->id }}" ->{{ $client->id }} - {{ $client->name }}</option>
         @endforeach
     </select>
 </div>
