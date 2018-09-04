@@ -52,6 +52,7 @@
             $ticket = Ticket::find($id);
             $empresa = Cliente::orderBy('id', 'asc')->get();
             $user = User::orderBy('id', 'asc')->get();
+           
             return view('site.ticket.edit', compact('ticket', 'empresa', 'user'));
         }
         

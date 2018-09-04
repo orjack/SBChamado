@@ -14,17 +14,3 @@ method="POST" enctype="multipart/form-data">
     <button class="float-right btn btn-primary">Atualizar</button>
 </form
 @endsection
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-    function ajaxprod(){
-      $.ajax({
-          type: "GET",
-          data: {item_empresa: $("#item_empresa").val()},
-          url: "/ticket/ajaxCoord",
-          success: function(response) {
-            $('#tableitem').html(response);
-          }
-      });
-    }
-</script>

@@ -10,6 +10,6 @@
         {{ session('status') }}
     </div>
     @endif
-    <h4>Bem vindo Picotão!</h4>
+    <h4>Bem vindo!</h4>
 
 @endsection
