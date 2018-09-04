@@ -8,7 +8,11 @@
     <label>Cliente</label>
     <select id="item_empresa" name="id_client" class="custom-select custom-select-lg mb-3">
         @foreach($empresa as $client)
+            @if(!isset($ticket->id))
             <option value="{{ $client->id }}">{{ $client->id }} - {{ $client->name }}</option>
+            @else
+            <option {{ $ticket->id_client == $client->id ? 'selected' : '' }} value="{{ $client->id }}">{{ $client->id }} - {{ $client->name }}</option>
+            @endif
         @endforeach
     </select>
 </div>
@@ -17,7 +21,11 @@
     <label>Analista</label>
     <select class="custom-select custom-select-lg mb-3" id="user" name="id_user">
         @foreach($user as $u)
-            <option id="id_user" name="id_user" value="{{ $u->id }}">{{ $u->name }}</option>
+            @if(!isset($ticket->id))
+            <option value="{{ $u->id }}">{{ $u->name }}</option>
+            @else
+            <option {{ $ticket->id_user == $u->id ? 'selected' : '' }} value="{{ $u->id }}">{{ $u->name }}</option>
+            @endif
         @endforeach
     </select>
 </div>
