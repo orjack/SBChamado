@@ -97,6 +97,11 @@
             <main class="py-4">
                 @yield('content')
             </main>
+            <script>
+                $(function () {
+                    $('[data-toggle="tooltip"]').tooltip()
+                })
+            </script>
         </div>
     </body>
 </html>

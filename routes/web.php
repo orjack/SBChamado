@@ -14,7 +14,8 @@
 Auth::routes();
 Route::get('/profile', ['as'=>'profile', 'uses'=> 'UserController@profile']);
 Route::post('/profile',  ['as'=>'profile', 'uses'=> 'UserController@update_avatar']);
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index', 'HomeController@semanal')->name('home');
+
     
 Route::get('/analista/modal', ['as'=>'modal', 'uses' =>'HomeController@modal']);
 
@@ -28,7 +29,7 @@ Route::group(['middleware'=>'auth'], function(){
       'as'=>'ticket.edit', 'uses'=>'Ticket\TicketController@edit']);
     Route::put('/chamado/update/{id}', [
       'as'=>'ticket.update', 'uses'=>'Ticket\TicketController@update']);
-    Route::get('/chamado/delete/{id}', [
+Route::get('/chamado/delete/{id}', [
       'as'=>'ticket.delete', 'uses'=>'Ticket\TicketController@delete']);
 });
 
