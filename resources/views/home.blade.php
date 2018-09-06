@@ -29,28 +29,28 @@
         border-radius: 50%;"></td>
                         <td>
                         @if($a->situation == 0)
-                            <span class="badge badge-danger" style="width: 30px; height: 30px;
+                            <span data-toggle="tooltip" data-placement="top" title="Aberto" class="badge badge-danger" style="width: 30px; height: 30px;
     border-radius: 50%; padding-top:10px">
                                 <strong>A</strong>
                             </span>
                         @elseif ($a->situation == 1)
-                            <span class="badge badge-primary" style="width: 30px; height: 30px;
+                            <span data-toggle="tooltip" data-placement="top" title="Delta" class="badge badge-primary" style="width: 30px; height: 30px;
     border-radius: 50%; padding-top:10px">
                                 <strong >D</strong>
                             </span>
                         @else
-                            <span class="badge badge-pill badge-success" style="width: 30px; height: 30px;
+                            <span data-toggle="tooltip" data-placement="top" title="Concluído" class="badge badge-pill badge-success" style="width: 30px; height: 30px;
     border-radius: 50%; padding-top:10px">
                                 <strong>C</strong>
                             </span>
                         @endif
                         </td >
                         @if($a->situation == 0)
-                            <td data-toggle="tooltip" data-placement="top" title="Aberto" class="font-weight-bold">{{$data_aberto->where('id_user', $u->id)->count()}}</td>
+                            <td  class="font-weight-bold">{{$data_aberto->where('id_user', $u->id)->count()}}</td>
                         @elseif($a->situation == 1)
-                            <td data-toggle="tooltip" data-placement="top" title="Delta" class="font-weight-bold">{{$data_delta->where('id_user', $u->id)->count()}}</td>
+                            <td class="font-weight-bold">{{$data_delta->where('id_user', $u->id)->count()}}</td>
                         @else
-                            <td data-toggle="tooltip" data-placement="top" title="Concluído" class="font-weight-bold">{{$data_concluido->where('id_user', $u->id)->count()}}</td>
+                            <td class="font-weight-bold">{{$data_concluido->where('id_user', $u->id)->count()}}</td>
                         @endif
                     </tr>
                 @endforeach
