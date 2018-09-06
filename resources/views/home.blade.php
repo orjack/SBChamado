@@ -11,191 +11,185 @@
         </div>
     @endif
     <div class="row">
-    <div class="col col-4">
-        <h5>Semanal</h5>
-        <table class="table table-sm table-hover table-dark table-responsive-sm">
+        <div class="col col-4">
+            <h5>Semanal</h5>
+            <table class="table table-sm table-hover table-dark table-responsive-sm">
 
-            <thead align="center">
-            <th>Analista</th>
-            <th>Situação</th>
-            <th>Total</th>
-            </thead>
+                <thead align="center">
+                <th>Analista</th>
+                <th>Situação</th>
+                <th>Total</th>
+                </thead>
 
-            <tbody align="center">
-            @foreach($user as $u)
-                @foreach($analyst as $a)
-                    <tr>
-                        <td><img data-toggle="tooltip" data-placement="top" title="{{ $u->name }}" src="upload/avatar/{{ $u->avatar }}" style="width: 40px; height: 40px;
+                <tbody align="center">
+                @foreach($user as $u)
+                    @foreach($analyst as $a)
+                        <tr>
+                            <td><img data-toggle="tooltip" data-placement="top" title="{{ $u->name }}"
+                                     src="upload/avatar/{{ $u->avatar }}" style="width: 40px; height: 40px;
         border-radius: 50%;"></td>
-                        <td>
-                        @if($a->situation == 0)
-<<<<<<< HEAD
-                            <span class="badge badge-danger" style="width: 30px; height: 30px;
-=======
-                            <span data-toggle="tooltip" data-placement="top" title="Aberto" class="badge badge-danger" style="width: 30px; height: 30px;
->>>>>>> refs/remotes/origin/master
-    border-radius: 50%; padding-top:10px">
+                            <td>
+                                @if($a->situation == 0)
+                                    <span data-toggle="tooltip" data-placement="top" title="Aberto"
+                                          class="badge badge-danger" style="width: 30px; height: 30px;border-radius: 50%; padding-top:10px">
                                 <strong>A</strong>
                             </span>
-                        @elseif ($a->situation == 1)
-<<<<<<< HEAD
-                            <span class="badge badge-primary" style="width: 30px; height: 30px;
-=======
-                            <span data-toggle="tooltip" data-placement="top" title="Delta" class="badge badge-primary" style="width: 30px; height: 30px;
->>>>>>> refs/remotes/origin/master
-    border-radius: 50%; padding-top:10px">
-                                <strong >D</strong>
+                                @elseif ($a->situation == 1)
+
+
+                                    <span data-toggle="tooltip" data-placement="top" title="Delta"
+                                          class="badge badge-primary" style="width: 30px; height: 30px;border-radius: 50%; padding-top:10px">
+                                <strong>D</strong>
                             </span>
-                        @else
-<<<<<<< HEAD
-                            <span class="badge badge-pill badge-success" style="width: 30px; height: 30px;
-=======
-                            <span data-toggle="tooltip" data-placement="top" title="Concluído" class="badge badge-pill badge-success" style="width: 30px; height: 30px;
->>>>>>> refs/remotes/origin/master
-    border-radius: 50%; padding-top:10px">
+                                @else
+
+
+                                    <span data-toggle="tooltip" data-placement="top" title="Concluído"
+                                          class="badge badge-pill badge-success" style="width: 30px; height: 30px;border-radius: 50%; padding-top:10px">
                                 <strong>C</strong>
                             </span>
-                        @endif
-                        </td >
-                        @if($a->situation == 0)
-<<<<<<< HEAD
-                            <td data-toggle="tooltip" data-placement="top" title="Aberto" class="font-weight-bold">{{$data_aberto->where('id_user', $u->id)->count()}}</td>
-                        @elseif($a->situation == 1)
-                            <td data-toggle="tooltip" data-placement="top" title="Delta" class="font-weight-bold">{{$data_delta->where('id_user', $u->id)->count()}}</td>
-                        @else
-                            <td data-toggle="tooltip" data-placement="top" title="Concluído" class="font-weight-bold">{{$data_concluido->where('id_user', $u->id)->count()}}</td>
-=======
-                            <td  class="font-weight-bold">{{$data_aberto->where('id_user', $u->id)->count()}}</td>
-                        @elseif($a->situation == 1)
-                            <td class="font-weight-bold">{{$data_delta->where('id_user', $u->id)->count()}}</td>
-                        @else
-                            <td class="font-weight-bold">{{$data_concluido->where('id_user', $u->id)->count()}}</td>
->>>>>>> refs/remotes/origin/master
-                        @endif
-                    </tr>
-                @endforeach
-            @endforeach
-            </tbody>
-
-            <tfoot class="bg-dark text-white" align="center">
-
-            <tr>
-                <td> Abertos:{{$data_aberto->where('situation', 0)->count()}}</td>
-                <td> Delta:{{$data_delta->where('situation', 1)->count()}}</td>
-                <td> Concluído:{{$data_concluido->where('situation', 2)->count()}}</td>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
-
-    <div class="col col-4">
-        <h5>Semana Anterior</h5>
-        <table class="table table-sm table-hover table-dark table-responsive-sm">
-            <thead align="center">
-            <th>Analista</th>
-            <th>Situação</th>
-            <th>Total</th>
-            </thead>
-
-            <tbody align="center">
-            @foreach($user as $u)
-                @foreach($analyst as $a)
-                    <tr>
-                        <td><img data-toggle="tooltip" data-placement="top" title="{{$u->name}}" src="upload/avatar/{{ $u->avatar }}" style="width: 40px; height: 40px;
-    border-radius: 50%;"></td>
-                        <td>
+                                @endif
+                            </td>
                             @if($a->situation == 0)
-                                <span data-toggle="tooltip" data-placement="top" title="Aberto" class="badge badge-danger" style="width: 30px; height: 30px;
+                                <td class="font-weight-bold">{{$data_aberto->where('id_user', $u->id)->count()}}</td>
+                            @elseif($a->situation == 1)
+                                <td class="font-weight-bold">{{$data_delta->where('id_user', $u->id)->count()}}</td>
+                            @else
+                                <td class="font-weight-bold">
+                                    {{$data_concluido->where('id_user', $u->id)->count()}}</td>
+                            @endif
+                        </tr>
+                    @endforeach
+                @endforeach
+                </tbody>
+
+                <tfoot class="bg-dark text-white" align="center">
+
+                <tr>
+                    <td> Abertos:{{$data_aberto->where('situation', 0)->count()}}</td>
+                    <td> Delta:{{$data_delta->where('situation', 1)->count()}}</td>
+                    <td> Concluído:{{$data_concluido->where('situation', 2)->count()}}</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="col col-4">
+            <h5>Semana Anterior</h5>
+            <table class="table table-sm table-hover table-dark table-responsive-sm">
+                <thead align="center">
+                <th>Analista</th>
+                <th>Situação</th>
+                <th>Total</th>
+                </thead>
+
+                <tbody align="center">
+                @foreach($user as $u)
+                    @foreach($analyst as $a)
+                        <tr>
+                            <td><img data-toggle="tooltip" data-placement="top" title="{{$u->name}}"
+                                     src="upload/avatar/{{ $u->avatar }}" style="width: 40px; height: 40px;
+    border-radius: 50%;"></td>
+                            <td>
+                                @if($a->situation == 0)
+                                    <span data-toggle="tooltip" data-placement="top" title="Aberto"
+                                          class="badge badge-danger" style="width: 30px; height: 30px;
 border-radius: 50%; padding-top:10px">
                             <strong>A</strong>
                         </span>
-                            @elseif ($a->situation == 1)
-                                <span data-toggle="tooltip" data-placement="top" title="Delta" class="badge badge-primary" style="width: 30px; height: 30px;
+                                @elseif ($a->situation == 1)
+                                    <span data-toggle="tooltip" data-placement="top" title="Delta"
+                                          class="badge badge-primary" style="width: 30px; height: 30px;
 border-radius: 50%; padding-top:10px">
                             <strong>D</strong>
                         </span>
-                            @else
-                                <span data-toggle="tooltip" data-placement="top" title="Concluído" class="badge badge-pill badge-success" style="width: 30px; height: 30px;
+                                @else
+                                    <span data-toggle="tooltip" data-placement="top" title="Concluído"
+                                          class="badge badge-pill badge-success" style="width: 30px; height: 30px;
 border-radius: 50%; padding-top:10px">
                             <strong>C</strong>
                         </span>
-                            @endif
-                        </td >
-                        @if($a->situation == 0)
-                            <td class="font-weight-bold">{{$semana_anterior_aberto->where('id_user', $u->id)->count()}}</td>
-                        @elseif($a->situation == 1)
-                            <td class="font-weight-bold">{{$semana_anterior_delta->where('id_user', $u->id)->count()}}</td>
-                        @else
-                            <td class="font-weight-bold">{{$semana_anterior_concluido->where('id_user', $u->id)->count()}}</td>
-                        @endif
-                    </tr>
-                @endforeach
-            @endforeach
-            </tbody>
-
-            <tfoot class="bg-dark text-white" align="center">
-            <tr>
-                <td> Abertos:{{$semana_anterior_aberto->where('situation', 0)->count()}}</td>
-                <td> Delta:{{$semana_anterior_delta->where('situation', 1)->count()}}</td>
-                <td> Concluído:{{$semana_anterior_concluido->where('situation', 2)->count()}}</td>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
-
-    <div class="col col-4">
-        <h5>Mensal</h5>
-        <table class="table table-sm table-hover table-dark table-responsive-sm">
-            <thead align="center">
-            <th>Analista</th>
-            <th>Situação</th>
-            <th>Total</th>
-            </thead>
-
-            <tbody align="center">
-            @foreach($user as $u)
-                @foreach($analyst as $a)
-                    <tr>
-                        <td><img data-toggle="tooltip" data-placement="top" title="{{ $u->name }}" src="upload/avatar/{{ $u->avatar }}" style="width: 40px; height: 40px;
-    border-radius: 50%;"></td>
-                        <td>
+                                @endif
+                            </td>
                             @if($a->situation == 0)
-                                <span data-toggle="tooltip" data-placement="top" title="Aberto" class="badge badge-danger" style="width: 30px; height: 30px;
+                                <td class="font-weight-bold">{{$semana_anterior_aberto->where('id_user', $u->id)->count()}}</td>
+                            @elseif($a->situation == 1)
+                                <td class="font-weight-bold">{{$semana_anterior_delta->where('id_user', $u->id)->count()}}</td>
+                            @else
+                                <td class="font-weight-bold">{{$semana_anterior_concluido->where('id_user', $u->id)->count()}}</td>
+                            @endif
+                        </tr>
+                    @endforeach
+                @endforeach
+                </tbody>
+
+                <tfoot class="bg-dark text-white" align="center">
+                <tr>
+                    <td> Abertos:{{$semana_anterior_aberto->where('situation', 0)->count()}}</td>
+                    <td> Delta:{{$semana_anterior_delta->where('situation', 1)->count()}}</td>
+                    <td> Concluído:{{$semana_anterior_concluido->where('situation', 2)->count()}}</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="col col-4">
+            <h5>Mensal</h5>
+            <table class="table table-sm table-hover table-dark table-responsive-sm">
+                <thead align="center">
+                <th>Analista</th>
+                <th>Situação</th>
+                <th>Total</th>
+                </thead>
+
+                <tbody align="center">
+                @foreach($user as $u)
+                    @foreach($analyst as $a)
+                        <tr>
+                            <td><img data-toggle="tooltip" data-placement="top" title="{{ $u->name }}"
+                                     src="upload/avatar/{{ $u->avatar }}" style="width: 40px; height: 40px;
+    border-radius: 50%;"></td>
+                            <td>
+                                @if($a->situation == 0)
+                                    <span data-toggle="tooltip" data-placement="top" title="Aberto"
+                                          class="badge badge-danger" style="width: 30px; height: 30px;
 border-radius: 50%; padding-top:10px">
-                            <strong >A</strong>
+                            <strong>A</strong>
                         </span>
-                            @elseif ($a->situation == 1)
-                                <span data-toggle="tooltip" data-placement="top" title="Delta" class="badge badge-primary" style="width: 30px; height: 30px;
+                                @elseif ($a->situation == 1)
+                                    <span data-toggle="tooltip" data-placement="top" title="Delta"
+                                          class="badge badge-primary" style="width: 30px; height: 30px;
 border-radius: 50%; padding-top:10px">
                             <strong>D</strong>
                         </span>
-                            @else
-                                <span data-toggle="tooltip" data-placement="top" title="Concluído" class="badge badge-pill badge-success" style="width: 30px; height: 30px;
+                                @else
+                                    <span data-toggle="tooltip" data-placement="top" title="Concluído"
+                                          class="badge badge-pill badge-success" style="width: 30px; height: 30px;
 border-radius: 50%; padding-top:10px">
                             <strong>C</strong>
                         </span>
+                                @endif
+                            </td>
+                            @if($a->situation == 0)
+                                <td class="font-weight-bold">{{$mensal_aberto->where('id_user', $u->id)->count()}}</td>
+                            @elseif($a->situation == 1)
+                                <td class="font-weight-bold">{{$mensal_delta->where('id_user', $u->id)->count()}}</td>
+                            @else
+                                <td class="font-weight-bold">{{$mensal_concluido->where('id_user', $u->id)->count()}}</td>
                             @endif
-                        </td >
-                        @if($a->situation == 0)
-                            <td class="font-weight-bold">{{$mensal_aberto->where('id_user', $u->id)->count()}}</td>
-                        @elseif($a->situation == 1)
-                            <td class="font-weight-bold">{{$mensal_delta->where('id_user', $u->id)->count()}}</td>
-                        @else
-                            <td class="font-weight-bold">{{$mensal_concluido->where('id_user', $u->id)->count()}}</td>
-                        @endif
-                    </tr>
+                        </tr>
+                    @endforeach
                 @endforeach
-            @endforeach
-            </tbody>
+                </tbody>
 
-            <tfoot class="bg-dark text-white" align="center">
-            <tr>
-                <td> Abertos:{{$mensal_aberto->where('situation', 0)->count()}}</td>
-                <td> Delta:{{$mensal_delta->where('situation', 1)->count()}}</td>
-                <td> Concluído:{{$mensal_concluido->where('situation', 2)->count()}}</td>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
+                <tfoot class="bg-dark text-white" align="center">
+                <tr>
+                    <td> Abertos:{{$mensal_aberto->where('situation', 0)->count()}}</td>
+                    <td> Delta:{{$mensal_delta->where('situation', 1)->count()}}</td>
+                    <td> Concluído:{{$mensal_concluido->where('situation', 2)->count()}}</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
 @endsection
