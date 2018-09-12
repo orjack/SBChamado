@@ -28,18 +28,18 @@
               <td><img class="img" src="upload/avatar/{{ $u->avatar }}" style="width: 40px; height: 40px;
                 border-radius: 50%;"></td>
               <td>{{$t->date}}</td>
-              <td> 
-                  @if($t->situation == 0) 
+              <td>
+                  @if($t->situation == 0)
                   <span class="badge badge-danger" style="width: 30px; height: 30px;
                   border-radius: 50%; padding-top:10px">
                     <strong>A</strong>
                   </span>
-                  @elseif ($t->situation == 1) 
+                  @elseif ($t->situation == 1)
                   <span class="badge badge-primary"style="width: 30px; height: 30px;
                   border-radius: 50%; padding-top:10px">
                     <strong>D</strong>
                   </span>
-                  @else 
+                  @else
                   <span class="badge badge-pill badge-success"style="width: 30px; height: 30px;
                   border-radius: 50%; padding-top:10px">
                     <strong>C</strong>
@@ -54,7 +54,9 @@
         @endforeach
       @endforeach
     @endforeach
+
   </tbody>
+
     <tfoot class="bg-dark text-white" align="center">
       <tr>
         <td>Total Chamados: <strong>{{$ticket->count()}}</strong></td>
@@ -64,7 +66,12 @@
         <td></td>
         <td></td>
         <td></td>
-      </tr>
+    </tr>
     </tfoot>
 </table>
+<div class="row">
+    <span class="span6" style="float: none; margin: 0 auto;">
+        {{ $ticket->links() }}
+    </span>
+</div>
 @endsection
