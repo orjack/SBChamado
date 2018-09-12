@@ -20,18 +20,28 @@
 
         public function index()
         {
-            $ticket = Ticket::orderBy('date', 'desc')->paginate(2);
+            $ticket = Ticket::orderBy('date', 'desc', 'situation', 'asc')->paginate(50);
             $empresa = Cliente::orderBy('id', 'asc')->get();
             $user = User::orderBy('id', 'asc')->get();
 
-            return view('site.ticket.index', compact('ticket', 'empresa', 'user'));
+            $dateAtual = new Carbon( Carbon::now());
+            $ano = $dateAtual->year;
+            $total_aberto = Ticket::where('situation', 0)
+            ->where('date', 'LIKE', "%{$ano}%")->count();
+
+            $total_delta = Ticket::where('situation', 1)
+            ->where('date', 'LIKE', "%{$ano}%")->count();
+
+            $total_concluido = Ticket::where('situation', 2)
+            ->where('date', 'LIKE', "%{$ano}%")->count();
+
+            return view('site.ticket.index', compact('ticket', 'empresa', 'user', 'total_aberto', 'total_delta', 'total_concluido'));
         }
 
         public function add()
         {
             $ticket = Ticket::all();
             $now = new Carbon();
-            //dd($now->formatLocalized('%d/%m/%Y'));
             $empresa = Cliente::orderBy('id', 'asc')->get();
             $user = User::all();
             return view('site.ticket.add', compact('ticket', 'empresa', 'user', 'now'));

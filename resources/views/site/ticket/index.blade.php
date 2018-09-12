@@ -6,6 +6,27 @@
 @endsection
 
 @section('list_body')
+<div class="row">
+    <ul class="list-group col-4">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Total de Chamados em Aberto
+            <span class="badge badge-danger badge-pill">{{ $total_aberto}}</span>
+         </li>
+     </ul>
+     <ul class="list-group col-4">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Total de Chamados na Delta
+            <span class="badge badge-primary badge-pill">{{ $total_delta}}</span>
+        </li>
+    </ul>
+    <ul class="list-group col-4">
+       <li class="list-group-item d-flex justify-content-between align-items-center">
+           Total de Chamados Concluído
+           <span class="badge badge-success badge-pill">{{ $total_concluido}}</span>
+       </li>
+   </ul>
+</div>
+
 <table class="table table-hover">
   <thead align="center">
     <th>Ticket</th>
