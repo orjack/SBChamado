@@ -21,6 +21,7 @@
         public function index()
         {
             $ticket = Ticket::orderBy('date', 'desc')->paginate(50);
+
             $empresa = Cliente::orderBy('id', 'asc')->get();
             $user = User::orderBy('id', 'asc')->get();
 
