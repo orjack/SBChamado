@@ -16,6 +16,8 @@
                 Total de chamados Ano Atual
                 <span class="badge badge-primary badge-pill">{{ $ano }}</span>
              </li>
+         </ul>
+         <ul class="list-group col-4">
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Total de chamados Ano Anterior
                 <span class="badge badge-primary badge-pill">{{ $ano_anterior }}</span>
