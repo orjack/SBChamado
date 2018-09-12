@@ -11,6 +11,19 @@
         </div>
     @endif
     <div class="row">
+        <ul class="list-group col-4">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Total de chamados Ano Atual
+                <span class="badge badge-primary badge-pill">{{ $ano }}</span>
+             </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Total de chamados Ano Anterior
+                <span class="badge badge-primary badge-pill">{{ $ano_anterior }}</span>
+            </li>
+        </ul>
+    </div>
+    <br/>
+    <div class="row">
         <div class="col col-4">
             <h5>Semanal</h5>
             <table class="table table-sm table-hover table-dark table-responsive-sm">
